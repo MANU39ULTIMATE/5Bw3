@@ -1,0 +1,171 @@
+posti_disp=36
+pesce=8
+pasta=6
+anguilla=10
+acqua=1.50
+cola=3
+thè_limone=2.50
+thè_pesca=2.50
+si_no=0
+giorno=32
+ora=23
+minuto=60
+persone=13
+budget=0
+scelta_piatto=0
+conferma=0
+print("desideri prenotare?")
+print("digita 1 per prenotare, digita un altro numero per non prenotare")
+si_no=int(input())
+if si_no == 1:
+    print("elenca giorno,ora,persone")
+    while giorno > 31 or giorno < 1:
+        print("giorno") 
+        giorno=int(input())
+        if giorno>31:
+            print("non esiste")
+        elif giorno<1:
+            print("non esiste")
+else:
+    print("ha deciso di nono prenotare")
+while ora>22:
+    print("ora")
+    ora=int(input())
+    if ora>22:
+       print("il limite è per le 22.59")
+    elif ora<12:
+        print("troppo presto")
+        while ora<12:
+            print("ora")
+            ora=int(input())
+            if ora<12:
+                print("troppo presto")
+            elif ora>22:
+                print("il limite è per le 22.59")
+    else:
+        while minuto>59 or minuto<0:
+            print("minuto")
+            minuto=int(input())
+            if minuto>59 or minuto<0:
+                print("non esiste")
+while persone>12:
+    print("persone")
+    persone=int(input())
+    if persone>12:
+        print("troppi posti per una sola prenotazione")
+    else:
+        posti_disp=posti_disp-persone
+        print("sono stati prenotati",persone,"posti")
+        print("ora sono disponibili:",posti_disp,"posti")
+print("qual'è il budget massimo per la prenotazione?")
+budget=int(input())
+print("piatti disponibili: pasta(1), pesce(2), anguilla(3)")
+print("bibite disponibili: acqua(4), cola(5), thè alla pesca(6), thè al limone(7)")
+print("prezzi piatti: pasta 6$, pesce 8$, anguilla 10$")
+print("prezzi bibite: acqua 1.50$, cola 3$, thè alla pesca/al limone 2.50$")
+print("digita 9 per vedere il budget attuale")
+while budget>1.49:
+    print("scegli i piatti e le bibite che desidera ordinare")
+    scelta_piatto=int(input())
+    if scelta_piatto>10:
+        print("non disponibile")
+    elif scelta_piatto<1:
+        print("non disponibile")
+    elif scelta_piatto==1:
+        print("vuoi ordinare: pasta? digita 1 per confermare")
+        conferma=int(input())
+        if conferma==1:
+            budget=budget-pasta
+            if budget<1.49:
+                print("non ha abbastanza soldi")
+                budget=budget+pasta
+            else:
+                print("ha ordinato pasta")
+                print("budget:",budget,"$")
+        else:
+            print("non ha ordinato pasta")
+    elif scelta_piatto==2:
+        print("vuoi ordinare: pesce? digita 1 per confermare")
+        conferma=int(input())
+        if conferma==1:
+            budget=budget-pesce
+            if budget<1.49:
+                print("non ha abbastanza soldi")
+                budget=budget+pesce
+            else:
+                print("ha ordinato pesce")
+                print("budget:",budget,"$")
+        else:
+            print("non ha ordinato pesce")
+    elif scelta_piatto==3:
+        print("vuoi ordinare: anguilla? digita 1 per confermare")
+        conferma=int(input())
+        if conferma==1:
+            budget=budget-anguilla
+            if budget<1.49:
+                print("non ha abbastanza soldi")
+                budget=budget+anguilla
+            else:
+                print("ha ordinato anguilla")
+                print("budget:",budget,"$")
+        else:
+            print("non ha ordinato anguilla")
+    elif scelta_piatto==4:
+        print("vuoi ordinare: acqua? digita 1 per confermare")
+        conferma=int(input())
+        if conferma==1:
+            budget=budget-acqua
+            if budget<1.49:
+                print("non ha abbastanza soldi")
+                budget=budget+acqua
+            else:
+                print("ha ordinato acqua")
+                print("budget:",budget,"$")
+        else:
+            print("non ha ordinato acqua")
+    elif scelta_piatto==5:
+        print("vuoi ordinare: cola? digita 1 per confermare")
+        conferma=int(input())
+        if conferma==1:
+            budget=budget-cola
+            if budget<1.49:
+                print("non ha abbastanza soldi")
+                budget=budget+cola
+            else:
+                print("ha ordinato cola")
+                print("budget:",budget,"$")
+        else:
+            print("non ha ordinato cola")
+    elif scelta_piatto==6:
+        print("vuoi ordinare: thè alla pesca? digita 1 per confermare")
+        conferma=int(input())
+        if conferma==1:
+            budget=budget-thè_pesca
+            if budget<1.49:
+                print("non ha abbastanza soldi")
+                budget=budget+thè_pesca
+            else:
+                print("ha ordinato thè alla pesca")
+                print("budget:",budget,"$")
+        else:
+            print("non ha ordinato thè alla pesca")
+    elif scelta_piatto==7:
+        print("vuoi ordinare: thè al limone? digita 1 per confermare")
+        conferma=int(input())
+        if conferma==1:
+            budget=budget-thè_limone
+            if budget<1.49:
+                print("non ha abbastanza soldi")
+                budget=budget+thè_limone
+            else:
+                print("ha ordinato thèallimone")
+                print("budget:",budget,"$")
+        else:
+            print("non ha ordinato thè al limone")
+    elif scelta_piatto==9:
+        print("budget:",budget,)
+    elif scelta_piatto==10:
+        print("prenotazione terminata")
+        break
+    else:
+        print("non disponibile")
